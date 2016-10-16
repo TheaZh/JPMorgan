@@ -12,7 +12,11 @@ ORDER = "http://localhost:8080/order?id={}&side=sell&qty={}&price={}"
 
 @app.route("/")
 def showHomePage():
-    return render_template('index.html')
+    return render_template('welcome.html')
+
+@app.route("/login")
+def showLoginPage():
+    return render_template("login.html")
 
 @app.route("/sell_action", methods = ['POST'])
 def sellStock():
