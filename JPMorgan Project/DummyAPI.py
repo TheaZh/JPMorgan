@@ -18,6 +18,7 @@ def showHomePage():
 def showLoginPage():
     return render_template("login.html")
 
+
 @app.route("/sell_action", methods = ['POST'])
 def sellStock():
     price = int(request.form['price'])
