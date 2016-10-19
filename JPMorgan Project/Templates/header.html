@@ -18,6 +18,8 @@
       .modal-footer {
       background-color: #99daef;
       }
+
+
     </style>
 </head>
 
@@ -63,17 +65,20 @@
                                     <div class="form-group">
                                         <label for="username"><span class="glyphicon glyphicon-user"></span>
                                             Username</label>
-                                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
+                                        <input type="text" class="form-control" name="username" id="username"
+                                               placeholder="Enter username">
                                     </div>
                                     <div class="form-group">
                                         <label for="password"><span class="glyphicon glyphicon-eye-open"></span>
                                             Password</label>
-                                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
+                                        <input type="password" class="form-control" name="password" id="password"
+                                               placeholder="Enter password">
                                     </div>
                                     <div class="checkbox">
                                         <label><input type="checkbox" value="" checked>Remember me</label>
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-block" style="background-color:#99daef"><span
+                                    <button type="submit" class="btn btn-success btn-block"
+                                            style="background-color:#99daef"><span
                                             class="glyphicon glyphicon-off"></span> Login
                                     </button>
                                 </form>
@@ -109,20 +114,25 @@
                                     <div class="form-group">
                                         <label for="usrname-for-signup"><span class="glyphicon glyphicon-user"></span>
                                             Username</label>
-                                        <input type="text" class="form-control" id="usrname-for-signup" placeholder="Enter username">
+                                        <input type="text" class="form-control" id="usrname-for-signup"
+                                               placeholder="Enter username">
                                     </div>
                                     <div class="form-group">
-                                        <label for="password-for-signup"><span class="glyphicon glyphicon-eye-open"></span>
+                                        <label for="password-for-signup"><span
+                                                class="glyphicon glyphicon-eye-open"></span>
                                             Password</label>
-                                        <input type="password" name="password-for-signup" class="form-control" id="password-for-signup" placeholder="Enter password">
+                                        <input type="password" name="password-for-signup" class="form-control"
+                                               id="password-for-signup" placeholder="Enter password">
                                     </div>
                                     <div class="form-group">
                                         <label for="retype-password"><span class="glyphicon glyphicon-eye-close"></span>
                                             Re-enter Password</label>
-                                        <input type="password" name="retype-password" class="form-control" id="retype-password" placeholder="Enter password again">
+                                        <input type="password" name="retype-password" class="form-control"
+                                               id="retype-password" placeholder="Enter password again">
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-block" style="background-color:#99daef;"><span
-                                            class="glyphicon glyphicon-off" ></span> SignUp
+                                    <button type="submit" class="btn btn-success btn-block"
+                                            style="background-color:#99daef;"><span
+                                            class="glyphicon glyphicon-off"></span> SignUp
                                     </button>
                                 </form>
                             </div>
@@ -144,15 +154,29 @@
         });
     });
 
+
+
     </script>
 </header>
 
 
 <body>
-    <div class="border-row" style="width:100%; margin-bottom: 15px;"></div>
-    <div class="container-fluid" style="min-height:100%">
-{% block body %}{% endblock %}
+<div class="border-row" style="width:100%; margin-bottom: 15px;"></div>
+<div class="container-fluid" style="min-height:100%">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span arial-hidden="true">&times;</span>
+        </button>
+        {{message}}
     </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% block body %}{% endblock %}
+</div>
 </body>
 
 </html>
