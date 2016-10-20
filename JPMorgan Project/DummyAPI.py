@@ -2,9 +2,19 @@ from flask import Flask, render_template, request, flash, url_for, redirect
 import httplib, urllib2
 import random
 import json
+from flaskext.mysql import MySQL
 
 app = Flask(__name__)
 app.secret_key = "super secret key"
+mysql = MySQL()
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = ''
+app.config['MYSQL_DATABASE_DB'] = 'user_info'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+mysql.init_app(app)
+cursor = mysql.connect().cursor()
+usernameAndPassword = dict()
+
 # Server API URLs
 QUERY = "http://localhost:8080/query?id={}"
 ORDER = "http://localhost:8080/order?id={}&side=sell&qty={}&price={}"
@@ -12,7 +22,7 @@ ORDER = "http://localhost:8080/order?id={}&side=sell&qty={}&price={}"
 
 @app.route("/")
 def show_homepage():
-    flash('flashTest!!!!!')
+    flash("Test!")
     return render_template('homepage.html')
 
 
@@ -20,21 +30,29 @@ def show_homepage():
 def login_process():
     error = ''
     try:
-        if request.method == "POST":
-            attempted_username = request.form['username']
-            attempted_password = request.form['password']
-
-        if attempted_username == "wangxucan" and attempted_password == "password":
-            flash("You have successfully logged in")
-            return redirect(url_for('show_homepage'))
-        else:
-            flash("Invalid Credentials, Try Again!")
-            return render_template('homepage.html')
-
-
+        cursor.execute("SELECT username,password FROM user_info")
     except Exception as e:
-        flash(e)
-        return render_template('homepage.html')
+        pass
+    record = cursor.fetchall()
+    #get all the user info and store them in the dictionary
+    for row in record:
+        usernameAndPassword[row[0]] = row[1]
+    print usernameAndPassword
+    cursor.close()
+
+    if request.method == "POST":
+        attempted_username = request.form['username']
+        attempted_password = request.form['password']
+        if attempted_username not in usernameAndPassword:
+            error = 'User name does not exist'
+        elif attempted_password != usernameAndPassword.get(attempted_username):
+            error = 'Invalid credentials. Please try again.'
+        else:
+            return render_template('success.html')
+        flash(error)
+    return render_template("homepage.html")
+
+
 
 
 @app.route("/sell_action", methods=['POST'])

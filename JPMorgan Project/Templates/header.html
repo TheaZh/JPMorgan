@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
     <style>
       .modal-header, h4, .close {
       background-color: #99daef;
@@ -61,7 +63,7 @@
                                 <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
                             </div>
                             <div class="modal-body" style="padding:40px 50px;">
-                                <form role="form" action="/login" method="POST">
+                                <form role="form" id="loginForm" action="/login" method="POST">
                                     <div class="form-group">
                                         <label for="username"><span class="glyphicon glyphicon-user"></span>
                                             Username</label>
@@ -87,14 +89,47 @@
                                 <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
                                     <span class="glyphicon glyphicon-remove"></span> Cancel
                                 </button>
-                                <p>Not a member? <a href="#">Sign Up</a></p>
-                                <p>Forgot <a href="#">Password?</a></p>
                             </div>
                         </div>
-
                     </div>
                 </div>
+                <script>
+        $(document).ready(function(){
+        $("#LoginBtn").click(function(){
+            $("#loginModal").modal();
+        });
+    });
 
+                </script>
+                <script>
+        $(document).ready(function() {
+        $('#loginForm').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            username: {
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required'
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required'
+                    }
+                }
+            }
+        }
+    });
+});
+
+                </script>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary btn-lg" id="SignUpBtn" style="margin-top: 5px;
                 margin-bottom: 5px;height: 44px;">
@@ -110,19 +145,27 @@
                                 <h4><span class="glyphicon glyphicon-plus"></span> SignUp</h4>
                             </div>
                             <div class="modal-body" style="padding:40px 50px;">
-                                <form role="form" action="/signup" method="POST">
+                                <form role="form" name="signupForm" action="#" method="POST">
                                     <div class="form-group">
                                         <label for="usrname-for-signup"><span class="glyphicon glyphicon-user"></span>
                                             Username</label>
-                                        <input type="text" class="form-control" id="usrname-for-signup"
+                                        <input type="text" class="form-control" name="usrname-for-signup" id="usrname-for-signup"
                                                placeholder="Enter username">
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="email"><span class="glyphicon glyphicon-envelope"></span>
+                                            Email</label>
+                                        <input type="text" class="form-control" id="email" name="email"
+                                               placeholder="Enter email">
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="password-for-signup"><span
                                                 class="glyphicon glyphicon-eye-open"></span>
                                             Password</label>
                                         <input type="password" name="password-for-signup" class="form-control"
-                                               id="password-for-signup" placeholder="Enter password">
+                                               id="password-for-signup"  placeholder="Enter password">
                                     </div>
                                     <div class="form-group">
                                         <label for="retype-password"><span class="glyphicon glyphicon-eye-close"></span>
@@ -142,21 +185,17 @@
             </ul>
         </div>
     </div>
+
+
     <script>
-        $(document).ready(function(){
-        $("#LoginBtn").click(function(){
-            $("#loginModal").modal();
-        });
-    });
         $(document).ready(function(){
         $("#SignUpBtn").click(function(){
             $("#signupModal").modal();
         });
     });
 
-
-
     </script>
+
 </header>
 
 
