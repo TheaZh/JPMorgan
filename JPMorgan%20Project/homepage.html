@@ -1,0 +1,21 @@
+{% extends "header_login.html"%}
+
+{% block body %}
+<div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#introduction" aria-controls="introduction" role="tab" data-toggle="tab">Introduction</a></li>
+    <li role="presentation"><a href="#team" aria-controls="team" role="tab" data-toggle="tab">Team</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="introduction">Introduction Here</div>
+    <div role="tabpanel" class="tab-pane" id="team">Team members</div>
+    <div role="tabpanel" class="tab-pane" id="messages">...</div>
+  </div>
+
+</div>
+
+{% endblock %}
