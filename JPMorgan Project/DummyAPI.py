@@ -22,7 +22,6 @@ ORDER = "http://localhost:8080/order?id={}&side=sell&qty={}&price={}"
 
 @app.route("/")
 def show_homepage():
-    flash("Test!")
     return render_template('homepage.html')
 
 
@@ -48,17 +47,23 @@ def login_process():
         elif attempted_password != usernameAndPassword.get(attempted_username):
             error = 'Invalid credentials. Please try again.'
         else:
-            return render_template('success.html')
+            return render_template('login.html')
         flash(error)
+    return render_template("homepage.html")
+
+@app.route("/logout")
+def logout_process():
+    flash("You have successfully logged out")
     return render_template("homepage.html")
 
 
 
-
-@app.route("/sell_action", methods=['POST'])
+@app.route("/sell_action", methods=['POST','GET'])
 def sell_stock():
     price = int(request.form['price'])
     quantity = int(request.form['quantity'])
+    print price
+    print quantity
     order_parameters = (price, quantity)
     print "Executing 'sell' of {:,} @ {:,}".format(*order_parameters)
     url = ORDER.format(random.random(), *order_parameters)
@@ -66,10 +71,13 @@ def sell_stock():
     if order['avg_price'] > 0:  # indicates a sucessful transaction
         sold_price = order['avg_price']
         notional = float(price * quantity)
+        result = "Sold {:,} for ${:,}/share, ${:,} notional".format(quantity, sold_price, notional)
         print "Sold {:,} for ${:,}/share, ${:,} notional".format(quantity, sold_price, notional)
     else:
         print "Unfilled order"
-    return render_template('success.html', **order)
+
+    flash(result)
+    return render_template('homepage.html')
 
 
 if __name__ == "__main__":
