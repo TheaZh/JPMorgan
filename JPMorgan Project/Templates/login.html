@@ -1,5 +1,7 @@
 {% extends "header_logout.html"%}
-
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
 {% block body %}
 
 <div>
@@ -15,7 +17,8 @@
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="tradePage">
             <div>
-                <form id="tradeForm" class="form-horizontal" action="/sell_action" method="POST" style="margin-top: 15px; margin-left: 20px; margin-right: 500px ">
+                <form id="tradeForm" class="form-horizontal" action="/sell_action" method="POST"
+                      style="margin-top: 15px; margin-left: 20px; margin-right: 500px ">
                     <div class="form-group">
                         <label for="quantity"><span class="glyphicon glyphicon-transfer"></span>
                             Quantity</label>
@@ -29,11 +32,33 @@
                                placeholder="Enter price">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Sell</button></a>
+                        <button type="submit" class="btn btn-primary">Sell</button>
+                        </a>
                         <button type="button" class="btn btn-primary disabled">Buy</button>
                     </div>
                 </form>
             </div>
+
+            <div>
+                <h3>Bid Price</h3>
+                <p id=bid_price>
+                <p>
+                <a href=# id=update_trigger>
+                    <button class='btn btn-primary '>Update</button>
+                </a>
+            </div>
+            <script type=text/javascript>
+			$(function() {
+			  $('a#update_trigger').bind('click', function() {
+				$.getJSON('/fetch_bid_price', {
+
+				}, function(data) {
+				  $("#bid_price").text(data.result+"$/share");
+				});
+				return false;
+			  });
+			});
+		    </script>
 
             <script>
 $(document).ready(function() {
@@ -61,8 +86,6 @@ $(document).ready(function() {
         }
     });
 });
-
-
 
             </script>
         </div>
