@@ -68,10 +68,17 @@ def sell_stock():
     print "Executing 'sell' of {:,} @ {:,}".format(*order_parameters)
     url = ORDER.format(random.random(), *order_parameters)
     order = json.loads(urllib2.urlopen(url).read())
+	
+    connection=mysql.get_db()
+    cursor = connection.cursor()
+
     if order['avg_price'] > 0:  # indicates a successful transaction
         sold_price = order['avg_price']
         notional = float(price * quantity)
         result = "Sold {:,} for ${:,}/share, ${:,} notional".format(quantity, sold_price, notional)
+        query="""INSERT INTO trade (quantity,price) VALUES(%s,%s)"""
+        cursor.execute(query,(quantity,sold_price))
+        connection.commit()
     else:
         print "Unfilled order"
 
