@@ -276,7 +276,19 @@ class App(object):
         size, px = float(x['qty']), float(x['price'])
         side     = 'buy' if x['side'] == 'sell' else 'sell'
         result   = clear_order(px, size, self._book[side], ops[side])
-        if result:
+
+        #if the order is not filled, the returned result will be none
+        if result == None:
+            return {
+            'id': x['id'],
+            'side': x['side'],
+            'timestamp': str(t),
+            'avg_price': 0,
+            'qty': x['qty']
+        }
+
+        #indicates a successful transaction
+        else:
             self._book[side] = result[1]
             avg_price = round(result[0] / size, 2)
         return {

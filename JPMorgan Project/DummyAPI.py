@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, url_for, redirect,jsonify
+from flask import Flask, render_template, request, flash, url_for, redirect, jsonify
 import httplib, urllib2
 import random
 import json
@@ -34,12 +34,11 @@ def login_process():
     except Exception as e:
         pass
     record = cursor.fetchall()
-    #get all the user info and store them in the dictionary
+    # get all the user info and store them in the dictionary
     for row in record:
         usernameAndPassword[row[0]] = row[1]
     print usernameAndPassword
     connection.commit()
-
 
     if request.method == "POST":
         attempted_username = request.form['username']
@@ -53,48 +52,57 @@ def login_process():
         flash(error)
     return render_template("homepage.html")
 
+
 @app.route("/logout")
 def logout_process():
     flash("You have successfully logged out")
     return render_template("homepage.html")
 
 
-
-@app.route("/sell_action", methods=['POST','GET'])
+@app.route("/sell_action", methods=['POST', 'GET'])
 def sell_stock():
     price = int(request.form['price'])
     quantity = int(request.form['quantity'])
+    print price
+    print quantity
     order_parameters = (price, quantity)
     print "Executing 'sell' of {:,} @ {:,}".format(*order_parameters)
     url = ORDER.format(random.random(), *order_parameters)
     order = json.loads(urllib2.urlopen(url).read())
-	
-    connection=mysql.get_db()
+
+    connection = mysql.get_db()
     cursor = connection.cursor()
 
-    if order['avg_price'] > 0:  # indicates a successful transaction
-        sold_price = order['avg_price']
-        notional = float(price * quantity)
+    username = "wangxucan"
+    timestamp = order['timestamp']
+    sold_price = order['avg_price']
+
+    if  sold_price > 0:  # indicates a successful transaction
+        notional = float(sold_price * sold_price)
+        status = "success"
+        share_num = 10
         result = "Sold {:,} for ${:,}/share, ${:,} notional".format(quantity, sold_price, notional)
-        query="""INSERT INTO trade (quantity,price) VALUES(%s,%s)"""
-        cursor.execute(query,(quantity,sold_price))
+        query = """INSERT INTO trade_history (timestamp,share_num,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s,%s)"""
+        cursor.execute(query, (timestamp, share_num,username,quantity,sold_price,notional,status))
         connection.commit()
     else:
-        print "Unfilled order"
+        share_num = 10
+        notional = 0
+        status = "fail"
+        query = """INSERT INTO trade_history (timestamp,share_num,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s,%s)"""
+        cursor.execute(query, (timestamp, share_num,username,quantity,sold_price,notional,status))
+        connection.commit()
+        result = "Unfilled Order"
 
     flash(result)
     return render_template('homepage.html')
 
-@app.route('/interactive')
-def interactive():
-	return render_template('interactive.html')
 
 @app.route('/fetch_bid_price')
 def background_process():
     quote = json.loads(urllib2.urlopen(QUERY.format(random.random())).read())
     price = float(quote['top_bid']['price'])
     return jsonify(result=price)
-
 
 
 if __name__ == "__main__":
