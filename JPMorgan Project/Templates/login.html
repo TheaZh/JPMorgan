@@ -43,9 +43,9 @@
                 <h3>Bid Price</h3>
                 <p id=bid_price>
                 <p>
-                <a href=# id=update_trigger>
-                    <button class='btn btn-primary '>Update</button>
-                </a>
+                    <a href=# id=update_trigger>
+                        <button class='btn btn-primary '>Update</button>
+                    </a>
             </div>
             <script type=text/javascript>
 			$(function() {
@@ -58,7 +58,8 @@
 				return false;
 			  });
 			});
-		    </script>
+
+            </script>
 
             <script>
 $(document).ready(function() {
@@ -87,9 +88,27 @@ $(document).ready(function() {
     });
 });
 
+
             </script>
         </div>
-        <div role="tabpanel" class="tab-pane" id="tradeHistory">TradeHistory</div>
+
+
+        <div role="tabpanel" class="tab-pane" id="tradeHistory">
+            <p id="trade_history"></p>
+            <script>
+                 $(document).ready(function() {
+                   setInterval(function() {
+				   $.getJSON('/fetch_trade_history', {
+				}, function(data) {
+				  $("#trade_history").text(data.result);
+				});
+				return false;
+				},1000);
+		     });
+            </script>
+        </div>
+
+
     </div>
 
 

@@ -37,9 +37,7 @@ def login_process():
     # get all the user info and store them in the dictionary
     for row in record:
         usernameAndPassword[row[0]] = row[1]
-    print usernameAndPassword
     connection.commit()
-
     if request.method == "POST":
         attempted_username = request.form['username']
         attempted_password = request.form['password']
@@ -65,7 +63,7 @@ def sell_stock():
     quantity = int(request.form['quantity'])
     print price
     print quantity
-    order_parameters = (price, quantity)
+    order_parameters = (quantity, price)
     print "Executing 'sell' of {:,} @ {:,}".format(*order_parameters)
     url = ORDER.format(random.random(), *order_parameters)
     order = json.loads(urllib2.urlopen(url).read())
@@ -80,19 +78,21 @@ def sell_stock():
     if  sold_price > 0:  # indicates a successful transaction
         notional = float(sold_price * sold_price)
         status = "success"
-        share_num = 10
         result = "Sold {:,} for ${:,}/share, ${:,} notional".format(quantity, sold_price, notional)
-        query = """INSERT INTO trade_history (timestamp,share_num,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s,%s)"""
-        cursor.execute(query, (timestamp, share_num,username,quantity,sold_price,notional,status))
+        query = """INSERT INTO trade_history (timestamp,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s)"""
+        cursor.execute(query, (timestamp,username,quantity,sold_price,notional,status))
         connection.commit()
     else:
         share_num = 10
         notional = 0
         status = "fail"
-        query = """INSERT INTO trade_history (timestamp,share_num,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s,%s)"""
-        cursor.execute(query, (timestamp, share_num,username,quantity,sold_price,notional,status))
+        query = """INSERT INTO trade_history (timestamp,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s)"""
+        cursor.execute(query, (timestamp,username,quantity,sold_price,notional,status))
         connection.commit()
         result = "Unfilled Order"
+
+
+    #refresh the content in the trade history tab when a new record is added
 
     flash(result)
     return render_template('homepage.html')
@@ -103,6 +103,18 @@ def background_process():
     quote = json.loads(urllib2.urlopen(QUERY.format(random.random())).read())
     price = float(quote['top_bid']['price'])
     return jsonify(result=price)
+
+@app.route('/fetch_trade_history')
+def fetch_trade_history():
+    connection = mysql.get_db()
+    cursor = connection.cursor()
+    query = """SELECT timestamp,qty,avg_price,notional,status FROM trade_history """
+    cursor.execute(query)
+    trade_history = cursor.fetchall()
+    return jsonify(result=trade_history)
+
+
+
 
 
 if __name__ == "__main__":
