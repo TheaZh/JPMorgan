@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="273c7658-846b-4801-acae-0f3921aeee93" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JPMorgan Project/Templates/login.html" afterPath="$PROJECT_DIR$/JPMorgan Project/Templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JPMorgan Project/DummyAPI.py" afterPath="$PROJECT_DIR$/JPMorgan Project/DummyAPI.py" />
     </list>
     <ignored path="Tutorial.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +25,8 @@
       <file leaf-file-name="DummyAPI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JPMorgan Project/DummyAPI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="107" column="26" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+            <state relative-caret-position="522">
+              <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
               <folding>
                 <element signature="e#0#84#0" expanded="true" />
               </folding>
@@ -39,8 +37,8 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
+            <state relative-caret-position="1785">
+              <caret line="105" column="45" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
               <folding>
                 <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -110,14 +108,14 @@
         <option value="$PROJECT_DIR$/JPMorgan Project/Templates/test.html" />
         <option value="$PROJECT_DIR$/JPMorgan Project/data.php" />
         <option value="$PROJECT_DIR$/JPMorgan Project/Templates/TEST.html" />
-        <option value="$PROJECT_DIR$/JPMorgan Project/DummyAPI.py" />
         <option value="$PROJECT_DIR$/JPMorgan Project/Templates/login.html" />
+        <option value="$PROJECT_DIR$/JPMorgan Project/DummyAPI.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="465" />
-    <option name="y" value="33" />
+    <option name="x" value="352" />
+    <option name="y" value="60" />
     <option name="width" value="1295" />
     <option name="height" value="821" />
   </component>
@@ -492,13 +490,13 @@
     <configuration />
   </component>
   <component name="ToolWindowManager">
-    <frame x="465" y="33" width="1295" height="821" extended-state="0" />
+    <frame x="352" y="60" width="1295" height="821" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17974882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282967" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3251366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24862637" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24862637" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997253" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -684,8 +682,8 @@
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/TEST.html" />
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/DummyAPI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="107" column="26" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+        <state relative-caret-position="522">
+          <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
           <folding>
             <element signature="e#0#84#0" expanded="true" />
           </folding>
@@ -694,8 +692,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
+        <state relative-caret-position="1785">
+          <caret line="105" column="45" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
           <folding>
             <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>

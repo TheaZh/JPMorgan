@@ -108,7 +108,7 @@ def background_process():
 def fetch_trade_history():
     connection = mysql.get_db()
     cursor = connection.cursor()
-    query = """SELECT timestamp,qty,avg_price,notional,status FROM trade_history """
+    query = """SELECT timestamp,qty,avg_price,notional,status FROM trade_history WHERE username='wangxucan' """
     cursor.execute(query)
     result = cursor.fetchall()
     trade_history = [list(elem) for elem in result]
