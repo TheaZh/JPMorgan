@@ -61,6 +61,7 @@
 
 
 
+
             </script>
 
             <script>
@@ -93,35 +94,37 @@ $(document).ready(function() {
 
 
 
+
             </script>
         </div>
 
 
         <div role="tabpanel" class="tab-pane" id="tradeHistory">
-            <table width="300" border="1" id="table">
-	<tr>
-		<td><b>#</b></td>
-		<td><b>Name</b></td>
-		<td><b>Email</b></td>
-        <td><b>Email</b></td>
-        <td><b>Email</b></td>
+            <table id="table" class="table table-hover">
+                <thead>
+                <tr>
+                    <td><b>TimeStamp</b></td>
+                    <td><b>Qty</b></td>
+                    <td><b>Avg_Price</b></td>
+                    <td><b>Notional</b></td>
+                    <td><b>Status</b></td>
+                </tr>
+                </thead>
 
-	</tr>
+                <tbody>
+                <tr>
+                    <div id="trade_history"></div>
+                </tr>
+                <tbody>
 
-    <tr>
-        <div id="trade_history"></div>
-    </tr>
-
-
-
-         <script>
+                <script>
                  $(document).ready(function() {
                    setInterval(function() {
 				   $.get('/fetch_trade_history', {
 				}, function(data) {
-
+				   $('#table').find('tbody').empty();
 				   for(var i=0; i<data.length;i++) {
-                            tr = $('<tr/>');
+				            tr = $('<tr/>');
                             tr.append("<td>" + data[i][0] + "</td>");
                             tr.append("<td>" + data[i][1] + "</td>");
                             tr.append("<td>" + data[i][2] + "</td>");
@@ -130,15 +133,14 @@ $(document).ready(function() {
                             tr.append("</tr>")
                             $('#table').append(tr);
                             }
-
 				});
 				return false;
-				},1000);
+				},10000);
 		     });
-         </script>
 
+                </script>
+            </table>
         </div>
-
 
 
     </div>
