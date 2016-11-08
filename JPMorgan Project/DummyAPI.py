@@ -92,7 +92,6 @@ def sell_stock():
         result = "Unfilled Order"
 
 
-    #refresh the content in the trade history tab when a new record is added
 
     flash(result)
     return render_template('homepage.html')
@@ -104,18 +103,16 @@ def background_process():
     price = float(quote['top_bid']['price'])
     return jsonify(result=price)
 
+
 @app.route('/fetch_trade_history')
 def fetch_trade_history():
     connection = mysql.get_db()
     cursor = connection.cursor()
     query = """SELECT timestamp,qty,avg_price,notional,status FROM trade_history """
     cursor.execute(query)
-    trade_history = cursor.fetchall()
-    return jsonify(result=trade_history)
-
-
-
-
+    result = cursor.fetchall()
+    trade_history = [list(elem) for elem in result]
+    return jsonify(trade_history)
 
 if __name__ == "__main__":
     app.debug = True

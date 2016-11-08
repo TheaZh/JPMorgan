@@ -59,6 +59,8 @@
 			  });
 			});
 
+
+
             </script>
 
             <script>
@@ -89,24 +91,54 @@ $(document).ready(function() {
 });
 
 
+
+
             </script>
         </div>
 
 
         <div role="tabpanel" class="tab-pane" id="tradeHistory">
-            <p id="trade_history"></p>
-            <script>
+            <table width="300" border="1" id="table">
+	<tr>
+		<td><b>#</b></td>
+		<td><b>Name</b></td>
+		<td><b>Email</b></td>
+        <td><b>Email</b></td>
+        <td><b>Email</b></td>
+
+	</tr>
+
+    <tr>
+        <div id="trade_history"></div>
+    </tr>
+
+
+
+         <script>
                  $(document).ready(function() {
                    setInterval(function() {
-				   $.getJSON('/fetch_trade_history', {
+				   $.get('/fetch_trade_history', {
 				}, function(data) {
-				  $("#trade_history").text(data.result);
+
+				   for(var i=0; i<data.length;i++) {
+                            tr = $('<tr/>');
+                            tr.append("<td>" + data[i][0] + "</td>");
+                            tr.append("<td>" + data[i][1] + "</td>");
+                            tr.append("<td>" + data[i][2] + "</td>");
+                            tr.append("<td>" + data[i][3] + "</td>");
+                            tr.append("<td>" + data[i][4] + "</td>");
+                            tr.append("</tr>")
+                            $('#table').append(tr);
+                            }
+
 				});
 				return false;
 				},1000);
 		     });
-            </script>
+         </script>
+
         </div>
+
 
 
     </div>
