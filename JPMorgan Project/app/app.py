@@ -61,37 +61,46 @@ def sell_stock():
     quantity = int(request.form['quantity'])
     print price
     print quantity
-    order_parameters = (quantity, price)
-    print "Executing 'sell' of {:,} @ {:,}".format(*order_parameters)
-    url = ORDER.format(random.random(), *order_parameters)
-    order = json.loads(urllib2.urlopen(url).read())
 
-    connection = mysql.get_db()
-    cursor = connection.cursor()
+    k=12
+    while quantity>0:
+        if k==0:
+            result = "This Order can not be finished in time "+k
+            print result
+        else:
+            qty=quantity/k
+            order_parameters = (qty, price)
+            print "Executing 'sell' of {:,} @ {:,}".format(*order_parameters)
+            url = ORDER.format(random.random(), *order_parameters)
+            order = json.loads(urllib2.urlopen(url).read())
 
-    username = "wangxucan"
-    timestamp = order['timestamp']
-    sold_price = order['avg_price']
+            connection = mysql.get_db()
+            cursor = connection.cursor()
 
-    if  sold_price > 0:  # indicates a successful transaction
-        notional = float(sold_price * sold_price)
-        status = "success"
-        result = "Sold {:,} for ${:,}/share, ${:,} notional".format(quantity, sold_price, notional)
-        query = """INSERT INTO trade_history (timestamp,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s)"""
-        cursor.execute(query, (timestamp,username,quantity,sold_price,notional,status))
-        connection.commit()
-    else:
-        share_num = 10
-        notional = 0
-        status = "fail"
-        query = """INSERT INTO trade_history (timestamp,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s)"""
-        cursor.execute(query, (timestamp,username,quantity,sold_price,notional,status))
-        connection.commit()
-        result = "Unfilled Order"
+            username = "wangxucan"
+            timestamp = order['timestamp']
+            sold_price = order['avg_price']
 
-
-
-    flash(result)
+            if  sold_price > 0:  # indicates a successful transaction
+                notional = float(sold_price * sold_price)
+                status = "success"
+                result = "Sold {:,} for ${:,}/share, ${:,} notional".format(qty, sold_price, notional)
+                print result
+                quantity-=qty
+                query = """INSERT INTO trade_history (timestamp,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s)"""
+                cursor.execute(query, (timestamp,username,qty,sold_price,notional,status))
+                connection.commit()
+            else:
+                share_num = 10
+                notional = 0
+                status = "fail"
+                query = """INSERT INTO trade_history (timestamp,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s)"""
+                cursor.execute(query, (timestamp,username,qty,sold_price,notional,status))
+                connection.commit()
+                result = "Unfilled Order"
+            k-=1
+            time.sleep(10)
+        flash(result)
     return render_template('homepage.html')
 
 
