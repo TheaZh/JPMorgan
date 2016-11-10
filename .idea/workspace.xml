@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="273c7658-846b-4801-acae-0f3921aeee93" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Tutorial.iml" afterPath="$PROJECT_DIR$/.idea/Tutorial.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JPMorgan Project/app/app.py" afterPath="$PROJECT_DIR$/JPMorgan Project/app/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JPMorgan Project/app/test.py" afterPath="$PROJECT_DIR$/JPMorgan Project/app/test.py" />
-    </list>
+    <list default="true" id="273c7658-846b-4801-acae-0f3921aeee93" name="Default" comment="" />
     <ignored path="Tutorial.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
