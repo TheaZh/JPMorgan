@@ -27,7 +27,7 @@ def show_homepage():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login_process():
-    error = ''
+    error = None
     connection = mysql.get_db()
     try:
         cursor.execute("SELECT username,password FROM user_info.user_info")
@@ -39,16 +39,14 @@ def login_process():
         usernameAndPassword[row[0]] = row[1]
     connection.commit()
     if request.method == "POST":
-        attempted_username = request.form['username']
-        attempted_password = request.form['password']
-        if attempted_username not in usernameAndPassword:
-            error = 'User name does not exist'
-        elif attempted_password != usernameAndPassword.get(attempted_username):
+        if request.form['username'] not in usernameAndPassword:
+            error = 'User name does not exist.'
+        elif request.form['password'] != usernameAndPassword.get(request.form['username']):
             error = 'Invalid credentials. Please try again.'
         else:
             return render_template('login.html')
         flash(error)
-    return render_template("homepage.html")
+    return render_template("homepage.html",error=error)
 
 
 @app.route("/logout")
