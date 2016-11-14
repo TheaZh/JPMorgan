@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="273c7658-846b-4801-acae-0f3921aeee93" name="Default" comment="" />
+    <list default="true" id="273c7658-846b-4801-acae-0f3921aeee93" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JPMorgan Project/app/app.py" afterPath="$PROJECT_DIR$/JPMorgan Project/app/app.py" />
+    </list>
     <ignored path="Tutorial.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="258">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -32,34 +34,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+            <state relative-caret-position="209">
+              <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
               <folding>
-                <element signature="e#0#84#0" expanded="true" />
+                <element signature="e#0#92#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header_login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/Templates/header_login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="216" column="17" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/Templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -133,14 +115,14 @@
         <option value="$PROJECT_DIR$/JPMorgan Project/Test/Test.py" />
         <option value="$PROJECT_DIR$/JPMorgan Project/Test/test.py" />
         <option value="$PROJECT_DIR$/JPMorgan Project/app/Templates/login.html" />
-        <option value="$PROJECT_DIR$/JPMorgan Project/app/app.py" />
         <option value="$PROJECT_DIR$/JPMorgan Project/app/test.py" />
+        <option value="$PROJECT_DIR$/JPMorgan Project/app/app.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="145" />
-    <option name="y" value="26" />
+    <option name="x" value="307" />
+    <option name="y" value="46" />
     <option name="width" value="1295" />
     <option name="height" value="821" />
   </component>
@@ -185,7 +167,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -264,11 +245,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/JPMorgan Project/app" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
@@ -293,7 +275,7 @@
       <recent name="$PROJECT_DIR$/JPMorgan Project/Templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test (1)">
+  <component name="RunManager" selected="Python.DummyAPI">
     <configuration default="false" name="DummyAPI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -550,11 +532,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.DummyAPI" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in show_homepage_test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.server (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.DummyAPI" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.server (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in show_homepage_test" />
       </list>
     </recent_temporary>
   </component>
@@ -565,9 +547,6 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_(1) - 2016.11.09 at 17h 23m 06s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_(1) - 2016.11.09 at 17h 24m 11s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
@@ -595,15 +574,18 @@
     <history-entry file="Unittests_in_test_(1) - 2016.11.09 at 20h 27m 30s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2016.11.09 at 22h 07m 34s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="145" y="26" width="1295" height="821" extended-state="0" />
-    <editor active="false" />
+    <frame x="307" y="46" width="1295" height="821" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17974882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282967" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32417583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24862637" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2348901" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997253" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -763,13 +745,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/data.php" />
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/TEST.html" />
-    <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/Templates/homepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/Test/show_homepage_test.py" />
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/Source.py" />
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py">
@@ -780,38 +755,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/Templates/header_login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="216" column="17" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/Templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/app.py">
+    <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/Templates/header_login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#84#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="275">
+          <caret line="216" column="17" selection-start-line="216" selection-start-column="17" selection-end-line="216" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/Templates/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="258">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JPMorgan Project/app/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#92#0" expanded="true" />
           </folding>
         </state>
       </provider>

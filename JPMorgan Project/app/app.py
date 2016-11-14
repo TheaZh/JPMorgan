@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, flash, url_for, redirect, jsonify
+from flask import Flask, render_template, request, flash, url_for, redirect, jsonify,session
 import httplib, urllib2
 import random
 import json
 from flaskext.mysql import MySQL
+import time
 
 app = Flask(__name__)
 app.secret_key = "super secret key"
@@ -44,6 +45,7 @@ def login_process():
         elif request.form['password'] != usernameAndPassword.get(request.form['username']):
             error = 'Invalid credentials. Please try again.'
         else:
+            session['username'] = request.form['username']
             return render_template('login.html')
         flash(error)
     return render_template("homepage.html",error=error)
@@ -59,6 +61,7 @@ def logout_process():
 def sell_stock():
     price = int(request.form['price'])
     quantity = int(request.form['quantity'])
+    username = session['username']
     print price
     print quantity
 
@@ -77,7 +80,6 @@ def sell_stock():
             connection = mysql.get_db()
             cursor = connection.cursor()
 
-            username = "wangxucan"
             timestamp = order['timestamp']
             sold_price = order['avg_price']
 
@@ -113,9 +115,10 @@ def background_process():
 
 @app.route('/fetch_trade_history')
 def fetch_trade_history():
+    username = session['username']
     connection = mysql.get_db()
     cursor = connection.cursor()
-    query = """SELECT timestamp,qty,avg_price,notional,status FROM trade_history WHERE username='wangxucan' """
+    query = """SELECT timestamp,qty,avg_price,notional,status FROM trade_history WHERE username = '%s'""" %username
     cursor.execute(query)
     result = cursor.fetchall()
     trade_history = [list(elem) for elem in result]

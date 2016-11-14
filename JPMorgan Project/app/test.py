@@ -1,13 +1,11 @@
 import unittest
 import app
 
-
 class MyTest(unittest.TestCase):
     # create an app
     def setUp(self):
         self.app = app.app.test_client()
         self.app.usernameAndPassword = {'TestUserName':'TestPassword'}
-
 
     def test_show_homepage(self):
         response = self.app.get("/")
@@ -18,7 +16,6 @@ class MyTest(unittest.TestCase):
         username = username,
         password = password
     ))
-
 
     def test_log_in_username_not_exist(self):
         username = 'WrongUserName'
