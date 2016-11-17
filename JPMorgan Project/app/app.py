@@ -59,7 +59,10 @@ def logout_process():
 
 @app.route("/sell_action", methods=['POST', 'GET'])
 def sell_stock():
-    price = int(request.form['price'])
+    if request.form['price']=='':
+        price=0
+    else:
+        price = int(request.form['price'])
     quantity = int(request.form['quantity'])
     username = session['username']
     print price
