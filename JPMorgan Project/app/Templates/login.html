@@ -1,4 +1,7 @@
 {% extends "header_logout.html"%}
+
+
+
 <head>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
@@ -17,7 +20,7 @@
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="tradePage">
             <div>
-                <form id="tradeForm" class="form-horizontal" action="/sell_action" method="POST"
+                <form id="tradeForm" class="trade" action="#"
                       style="margin-top: 15px; margin-left: 20px; margin-right: 500px ">
                     <div class="form-group">
                         <label for="quantity"><span class="glyphicon glyphicon-transfer"></span>
@@ -47,9 +50,12 @@
                         <button class='btn btn-primary '>Update</button>
                     </a>
             </div>
+
+
+
             <script type=text/javascript>
 			$(function() {
-			  $('a#update_trigger').bind('click', function() {
+			  $('#update_trigger').bind('click', function() {
 				$.getJSON('/fetch_bid_price', {
 
 				}, function(data) {
@@ -58,9 +64,27 @@
 				return false;
 			  });
 			});
+            </script>
 
-
-
+            <script type="text/javascript">
+            $(document).ready(function() {
+                 $('#tradeForm').on('submit',function(event) {
+    	             event.preventDefault();
+                     var formData = new FormData($('form')[0],$('form')[1]);
+    	         $.ajax({
+     		         type: 'POST',
+    		         url: '/sell_action',
+    		         data: formData,
+    		         processData: false,
+    		         contentType: false,
+    		         success: function() {
+    			         alert('Submission success');
+    		         }
+    	         });
+    	         $('#tradeForm').unbind('submit');
+    	         return false;
+                 });
+            });
 
             </script>
 
