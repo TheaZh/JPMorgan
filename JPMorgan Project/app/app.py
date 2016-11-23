@@ -28,19 +28,18 @@ def show_homepage():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login_process():
-    if request.method == 'POST':
-        error = None
-        connection = mysql.get_db()
-        try:
-            cursor.execute("SELECT username,password FROM user_info.user_info")
-        except Exception as e:
-            pass
-        record = cursor.fetchall()
-        # get all the user info and store them in the dictionary
-        for row in record:
-             usernameAndPassword[row[0]] = row[1]
-             connection.commit()
-
+    error = None
+    connection = mysql.get_db()
+    try:
+        cursor.execute("SELECT username,password FROM user_info.user_info")
+    except Exception as e:
+        pass
+    record = cursor.fetchall()
+    # get all the user info and store them in the dictionary
+    for row in record:
+        usernameAndPassword[row[0]] = row[1]
+    connection.commit()
+    if request.method == "POST":
         if request.form['username'] not in usernameAndPassword:
             error = 'User name does not exist.'
         elif request.form['password'] != usernameAndPassword.get(request.form['username']):
@@ -49,14 +48,7 @@ def login_process():
             session['username'] = request.form['username']
             return render_template('login.html')
         flash(error)
-        return render_template("homepage.html",error=error)
-
-    elif request.method == 'GET':
-        return render_template('login.html')
-
-
-
-
+    return render_template("homepage.html",error=error)
 
 
 @app.route("/logout")
@@ -67,8 +59,8 @@ def logout_process():
 
 @app.route("/sell_action", methods=['POST', 'GET'])
 def sell_stock():
-    if request.form['price'] == '':
-        price =0
+    if request.form['price']=='':
+        price=0
     else:
         price = int(request.form['price'])
     quantity = int(request.form['quantity'])
@@ -104,15 +96,17 @@ def sell_stock():
                 cursor.execute(query, (timestamp,username,qty,sold_price,notional,status))
                 connection.commit()
             else:
+                share_num = 10
                 notional = 0
                 status = "fail"
                 query = """INSERT INTO trade_history (timestamp,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s)"""
                 cursor.execute(query, (timestamp,username,qty,sold_price,notional,status))
                 connection.commit()
+                result = "Unfilled Order"
             k-=1
-            time.sleep(3)
-        #flash(result)
-    return render_template('login.html')
+            time.sleep(10)
+        flash(result)
+    return render_template('homepage.html')
 
 
 @app.route('/fetch_bid_price')
