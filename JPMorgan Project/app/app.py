@@ -63,11 +63,9 @@ def sell_stock():
         price=0
     else:
         price = int(request.form['price'])
+
     quantity = int(request.form['quantity'])
     username = session['username']
-    print price
-    print quantity
-
     k=12
     while quantity>0:
         if k==0:
@@ -79,13 +77,10 @@ def sell_stock():
             print "Executing 'sell' of {:,} @ {:,}".format(*order_parameters)
             url = ORDER.format(random.random(), *order_parameters)
             order = json.loads(urllib2.urlopen(url).read())
-
             connection = mysql.get_db()
             cursor = connection.cursor()
-
             timestamp = order['timestamp']
             sold_price = order['avg_price']
-
             if  sold_price > 0:  # indicates a successful transaction
                 notional = float(sold_price * sold_price)
                 status = "success"
@@ -105,8 +100,7 @@ def sell_stock():
                 result = "Unfilled Order"
             k-=1
             time.sleep(10)
-        flash(result)
-    return render_template('homepage.html')
+    return render_template("login.html")
 
 
 @app.route('/fetch_bid_price')
