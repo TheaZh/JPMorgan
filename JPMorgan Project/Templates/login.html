@@ -17,8 +17,8 @@
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="tradePage">
             <div>
-                <form id="tradeForm" class="form-horizontal" action="/sell_action" method="POST"
-                      style="margin-top: 15px; margin-left: 20px; margin-right: 900px ">
+                 <form id="tradeForm" class="trade"
+                      style="margin-top: 15px; margin-left: 20px; margin-right: 500px ">
                     <div class="form-group">
                         <label for="quantity"><span class="glyphicon glyphicon-transfer"></span>
                             Quantity</label>
@@ -33,7 +33,7 @@
                                placeholder="Enter price">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Sell</button>
+                        <button type="button" id="submitBtn" class="btn btn-primary">Sell</button>
                         <button type="button" class="btn btn-primary disabled">Buy</button>
                     </div>
                 </form>
@@ -59,6 +59,28 @@
 			  });
 			});
             </script>
+
+
+            <script type="text/javascript">
+            $(document).ready(function() {
+                 $('#submitBtn').button().click(function(event) {
+                     var formData = new FormData($('form')[0],$('form')[1]);
+    	         $.ajax({
+     		         type: 'POST',
+    		         url: '/sell_action',
+    		         data: formData,
+    		         processData: false,
+    		         contentType: false,
+    		         success: function() {
+    			         alert('Submission success');
+    		         }
+    	         });
+
+    	         return false;
+                 });
+            });
+            </script>
+
 
             <script>
 $(document).ready(function() {

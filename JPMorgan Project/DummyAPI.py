@@ -10,8 +10,8 @@ app = Flask(__name__)
 app.secret_key = "super secret key"
 mysql = MySQL()
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = '0919'
-app.config['MYSQL_DATABASE_DB'] = 'stock'
+app.config['MYSQL_DATABASE_PASSWORD'] = ''
+app.config['MYSQL_DATABASE_DB'] = 'user_info'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
 cursor = mysql.connect().cursor()
@@ -32,7 +32,7 @@ def login_process():
     error = None
     connection = mysql.get_db()
     try:
-        cursor.execute("SELECT username,password FROM stock.user_info")
+        cursor.execute("SELECT username,password FROM user_info.user_info")
     except Exception as e:
         pass
     record = cursor.fetchall()
@@ -70,7 +70,6 @@ def sell_stock():
     k=12
 
     while quantity>0:
-        #username="wangxucan"
         if k==0:
             result = "This Order can not be finished in time "+k
             #context=dict(info = result)
@@ -111,7 +110,7 @@ def sell_stock():
 
             k-=1
             time.sleep(2)
-        flash(result)
+        #flash(result)
         #context = dict(info = temp)
     return render_template('login.html')
 
