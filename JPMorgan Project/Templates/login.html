@@ -1,0 +1,227 @@
+{% extends "header_logout.html"%}
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+{% block body %}
+
+<div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#tradePage" aria-controls="tradePage" role="tab"
+                                                  data-toggle="tab">Trade</a></li>
+        <li role="presentation"><a href="#tradeHistory" aria-controls="tradeHistory" role="tab" data-toggle="tab">TradeHistory</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tradePage">
+            <div>
+                <form id="tradeForm" class="form-horizontal" action="/sell_action" method="POST"
+                      style="margin-top: 15px; margin-left: 20px; margin-right: 900px ">
+
+                    <div class="form-group">
+                        <label for="startTime">Start time</label>
+                        <input type="text" class="form-control" name="startTime" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endTime">End time</label>
+                        <input type="text" class="form-control" name="endTime" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity"><span class="glyphicon glyphicon-transfer"></span>
+                            Quantity</label>
+                        <input type="text" class="form-control" name="quantity" id="quantity"
+                               placeholder="Enter quantity">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price"><span class="glyphicon glyphicon-usd"></span>
+                            Price</label>
+                        <input type="text" class="form-control" name="price" id="price"
+                               placeholder="Enter price">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Sell</button>
+                        <button type="button" class="btn btn-primary disabled">Buy</button>
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                <h3>Bid Price</h3>
+                <p id=bid_price>
+                <p>
+                    <a href=# id=update_trigger>
+                        <button class='btn btn-primary '>Update</button>
+                    </a>
+            </div>
+            <script type=text/javascript>
+			$(function() {
+			  $('a#update_trigger').bind('click', function() {
+				$.getJSON('/fetch_bid_price', {
+
+				}, function(data) {
+				  $("#bid_price").text(data.result+"$/share");
+				});
+				return false;
+			  });
+			});
+            </script>
+
+            <script>
+$(document).ready(function() {
+    var TIME_PATTERN = /^(09|1[0-7]{1}):[0-5]{1}[0-9]{1}$/;
+
+    $('#tradeForm').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            quantity: {
+                validators: {
+                    integer: {
+                        message: 'The quantity must be an integer'
+                    }
+                }
+            },
+            price: {
+                validators: {
+                    numeric: {
+                        message: 'The price must be an number'
+                    }
+                }
+            },
+            startTime: {
+                verbose: false,
+                validators: {
+                    notEmpty: {
+                        message: 'The start time is required'
+                    },
+                    regexp: {
+                        regexp: TIME_PATTERN,
+                        message: 'The start time must be between 09:00 and 17:59'
+                    },
+                    callback: {
+                        message: 'The start time must be earlier then the end one',
+                        callback: function(value, validator, $field) {
+                            var endTime = validator.getFieldElements('endTime').val();
+                            if (endTime === '' || !TIME_PATTERN.test(endTime)) {
+                                return true;
+                            }
+                            var startHour    = parseInt(value.split(':')[0], 10),
+                                startMinutes = parseInt(value.split(':')[1], 10),
+                                endHour      = parseInt(endTime.split(':')[0], 10),
+                                endMinutes   = parseInt(endTime.split(':')[1], 10);
+
+                            if (startHour < endHour || (startHour == endHour && startMinutes < endMinutes)) {
+                                // The end time is also valid
+                                // So, we need to update its status
+                                validator.updateStatus('endTime', validator.STATUS_VALID, 'callback');
+                                return true;
+                            }
+
+                            return false;
+                        }
+                    }
+                }
+            },
+            endTime: {
+                verbose: false,
+                validators: {
+                    notEmpty: {
+                        message: 'The end time is required'
+                    },
+                    regexp: {
+                        regexp: TIME_PATTERN,
+                        message: 'The end time must be between 09:00 and 17:59'
+                    },
+                    callback: {
+                        message: 'The end time must be later then the start one',
+                        callback: function(value, validator, $field) {
+                            var startTime = validator.getFieldElements('startTime').val();
+                            if (startTime == '' || !TIME_PATTERN.test(startTime)) {
+                                return true;
+                            }
+                            var startHour    = parseInt(startTime.split(':')[0], 10),
+                                startMinutes = parseInt(startTime.split(':')[1], 10),
+                                endHour      = parseInt(value.split(':')[0], 10),
+                                endMinutes   = parseInt(value.split(':')[1], 10);
+
+                            if (endHour > startHour || (endHour == startHour && endMinutes > startMinutes)) {
+                                // The start time is also valid
+                                // So, we need to update its status
+                                validator.updateStatus('startTime', validator.STATUS_VALID, 'callback');
+                                return true;
+                            }
+
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+
+
+
+
+
+            </script>
+        </div>
+
+
+        <div role="tabpanel" class="tab-pane" id="tradeHistory">
+            <table id="table" class="table table-hover">
+                <thead>
+                <tr>
+                    <td><b>TimeStamp</b></td>
+                    <td><b>Qty</b></td>
+                    <td><b>Avg_Price</b></td>
+                    <td><b>Notional</b></td>
+                    <td><b>Status</b></td>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <div id="trade_history"></div>
+                </tr>
+                <tbody>
+
+                <script>
+                 $(document).ready(function() {
+                   setInterval(function() {
+				   $.get('/fetch_trade_history', {
+				}, function(data) {
+				   $('#table').find('tbody').empty();
+				   for(var i=0; i<data.length;i++) {
+				            tr = $('<tr/>');
+                            tr.append("<td>" + data[i][0] + "</td>");
+                            tr.append("<td>" + data[i][1] + "</td>");
+                            tr.append("<td>" + data[i][2] + "</td>");
+                            tr.append("<td>" + data[i][3] + "</td>");
+                            tr.append("<td>" + data[i][4] + "</td>");
+                            tr.append("</tr>")
+                            $('#table').append(tr);
+                            }
+				});
+				return false;
+				},10000);
+		     });
+
+                </script>
+            </table>
+        </div>
+
+
+    </div>
+
+
+</div>
+{% endblock %}
