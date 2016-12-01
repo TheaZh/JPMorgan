@@ -65,67 +65,12 @@ def sell_stock():
     else:
         price = int(request.form['price'])
     quantity = int(request.form['quantity'])
-    # username=session['username']
 
-    curtime=datetime.now().time()
-    struct_time = curtime.strftime('%H:%M')
-    t0=struct_time.split(":")
-
-    #if request.form['startTime']=='':
-    #    if struct_time>"17:59":
-    #        result="stock exchange closed today, please try to sell stock tomorrow."
-    #        flash(result)
-    #        return render_template('login.html')
-    #    else:
-    #        startTime=max(struct_time,"09:00")
-    #else:
-    startTime=request.form['startTime'].encode()
-    t1=startTime.split(":")
-
-    #if request.form['endTime']=='':
-    #    if struct_time>"17:59":
-    #        result="stock exchange closed today, please try to sell stock tomorrow."
-    #        flash(result)
-    #        return render_template('login.html')
-    #    else:
-    #        endTime="17:59"
-    #else:
-    endTime=request.form['endTime'].encode()
-    t2=endTime.split(":")
-    print price
-    print quantity
-    print curtime
-    print startTime
-    print endTime
-    print t0 #current time
-    print t1 #start time
-    print t2 #end time
-
-    #temp=[]
-
-    before=(int(t1[0])-int(t0[0]))*60+int(t1[1])-int(t0[1])
-    if before<0:
-        before=0
-    print before
-    time.sleep(before*60)
-
-    process=(int(t2[0])-int(t1[0]))*60+int(t2[1])-int(t1[1])
-
-    if quantity<12:
-        count=quantity
-        k=count
-    elif quantity<120:
-        count=12
-        k=count
-    else:
-        count=12*quantity/120
-        k=count
-        if process*60<count:
-            count=process*60
-            k=count
+    username=session['username']
+    k=12
 
     while quantity>0:
-        username="wangxucan"
+        #username="wangxucan"
         if k==0:
             result = "This Order can not be finished in time "+k
             #context=dict(info = result)
@@ -165,7 +110,7 @@ def sell_stock():
                 #temp.add(result)
 
             k-=1
-            time.sleep(process*60/count)
+            time.sleep(2)
         flash(result)
         #context = dict(info = temp)
     return render_template('login.html')
