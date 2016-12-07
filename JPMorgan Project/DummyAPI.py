@@ -1,13 +1,16 @@
-from flask import Flask, render_template, request, flash, url_for, redirect, jsonify,session
+from flask import Flask, render_template, request, flash,jsonify,session
 import httplib, urllib2
 import random
 import json
 from flaskext.mysql import MySQL
 import time
-from datetime import datetime
+from flask_socketio import SocketIO, send,emit
 
 app = Flask(__name__)
 app.secret_key = "super secret key"
+
+socketio = SocketIO(app)
+
 mysql = MySQL()
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = ''
@@ -58,13 +61,14 @@ def logout_process():
     return render_template("homepage.html")
 
 
-@app.route("/sell_action", methods=['POST', 'GET'])
-def sell_stock():
-    if request.form['price']=='':
+@socketio.on('form')
+def sell_stock(form):
+    print form
+    if form['price']=='':
         price=0
     else:
-        price = int(request.form['price'])
-    quantity = int(request.form['quantity'])
+        price = int(form['price'])
+    quantity = int(form['quantity'])
 
     username=session['username']
     k=12
@@ -72,7 +76,6 @@ def sell_stock():
     while quantity>0:
         if k==0:
             result = "This Order can not be finished in time "+k
-            #context=dict(info = result)
             print result
         else:
             qty=quantity/k
@@ -90,29 +93,26 @@ def sell_stock():
             if  sold_price > 0:  # indicates a successful transaction
                 notional = float(sold_price * sold_price)
                 status = "success"
-                result = "Sold {:,} for ${:,}/share, ${:,} notional".format(qty, sold_price, notional)
-                print result
-                #temp.add(result)
+                result = "Sold {:,} for ${:,}/share".format(qty, sold_price)
+                emit('message',result)
+
 
                 quantity-=qty
                 query = """INSERT INTO trade_history (timestamp,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s)"""
                 cursor.execute(query, (timestamp,username,qty,sold_price,notional,status))
                 connection.commit()
             else:
-                share_num = 10
                 notional = 0
                 status = "fail"
                 query = """INSERT INTO trade_history (timestamp,username,qty,avg_price,notional,status) VALUES(%s,%s,%s,%s,%s,%s)"""
                 cursor.execute(query, (timestamp,username,qty,sold_price,notional,status))
                 connection.commit()
                 result = "Unfilled Order"
-                #temp.add(result)
 
             k-=1
-            time.sleep(2)
-        #flash(result)
-        #context = dict(info = temp)
-    return render_template('login.html')
+            socketio.sleep(2)
+
+    return '{}'
 
 
 @app.route('/fetch_bid_price')
@@ -135,4 +135,4 @@ def fetch_trade_history():
 
 if __name__ == "__main__":
     app.debug = True
-    app.run()
+    socketio.run(app)

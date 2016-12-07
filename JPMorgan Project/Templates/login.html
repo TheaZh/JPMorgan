@@ -1,8 +1,9 @@
 {% extends "header_logout.html"%}
 <head>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 {% block body %}
+
 
 <div>
     <!-- Nav tabs -->
@@ -17,7 +18,7 @@
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="tradePage">
             <div>
-                 <form id="tradeForm" class="trade"
+                <form id="tradeForm" class="trade"
                       style="margin-top: 15px; margin-left: 20px; margin-right: 500px ">
                     <div class="form-group">
                         <label for="quantity"><span class="glyphicon glyphicon-transfer"></span>
@@ -39,7 +40,7 @@
                 </form>
             </div>
 
-            <div>
+            <div style="margin-top: 15px; margin-left: 20px">
                 <h3>Bid Price</h3>
                 <p id=bid_price>
                 <p>
@@ -47,9 +48,11 @@
                         <button class='btn btn-primary '>Update</button>
                     </a>
             </div>
+
+
             <script type=text/javascript>
 			$(function() {
-			  $('a#update_trigger').bind('click', function() {
+			  $('#update_trigger').bind('click', function() {
 				$.getJSON('/fetch_bid_price', {
 
 				}, function(data) {
@@ -58,27 +61,36 @@
 				return false;
 			  });
 			});
+
+
+
             </script>
 
+            <script type="text/javascript"
+                    src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 
             <script type="text/javascript">
-            $(document).ready(function() {
-                 $('#submitBtn').button().click(function(event) {
-                     var formData = new FormData($('form')[0],$('form')[1]);
-    	         $.ajax({
-     		         type: 'POST',
-    		         url: '/sell_action',
-    		         data: formData,
-    		         processData: false,
-    		         contentType: false,
-    		         success: function() {
-    			         alert('Submission success');
-    		         }
+                var socket = io.connect('http://'+document.domain+':'+location.port);
+                    socket.on('connect',function(){
+                        socket.send('Connected to the server');
+                    });
+
+                    socket.on('message',function(msg){
+                        $("#realtime").append('<li>'+msg+'</li>');
+                    });
+
+
+
+            </script>
+
+            <script type="text/javascript">
+            $('#submitBtn').button().click(function(event) {
+                     var formData = {quantity: $('#quantity').val(), price: $('#price').val()};
+    	           socket.emit('form',formData);
     	         });
 
-    	         return false;
-                 });
-            });
+
+
             </script>
 
 
@@ -116,6 +128,12 @@ $(document).ready(function() {
 
 
             </script>
+
+            <div style="margin-top: 15px; margin-left: 20px">
+                <h3>Real Time Transaction Status</h3>
+                <p id="realtime"></p>
+            </div>
+
         </div>
 
 
@@ -157,6 +175,9 @@ $(document).ready(function() {
 				return false;
 				},10000);
 		     });
+
+
+
 
                 </script>
             </table>
