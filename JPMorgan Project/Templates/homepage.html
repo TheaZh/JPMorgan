@@ -1,21 +1,76 @@
-{% extends "header_login.html"%}
+<div class="container">
+    <p></p>
+    <p></p>
+    {% extends "header_login.html"%}
 
-{% block body %}
-<div>
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#introduction" aria-controls="introduction" role="tab" data-toggle="tab">Introduction</a></li>
-    <li role="presentation"><a href="#team" aria-controls="team" role="tab" data-toggle="tab">Team</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-  </ul>
+    {% block body %}
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="introduction">Introduction Here</div>
-    <div role="tabpanel" class="tab-pane" id="team">Team members</div>
-    <div role="tabpanel" class="tab-pane" id="messages">...</div>
-  </div>
+    <p></p>
+    <p></p>
+    <div class="header">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li role="presentation" class="active"><a href="#introduction" aria-controls="introduction" role="tab"
+                                                      data-toggle="tab" style="font-size: 160%">Introduction</a></li>
+            <li role="presentation"><a href="#team" aria-controls="team" role="tab" data-toggle="tab"
+                                       style="font-size: 160%">Team</a></li>
+        </ul>
+        <p></p>
+        <p></p>
+        <div class="jumbotron">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="introduction">
+                    <p align="justify">Share dealing happens every day. Usually, there are lots of traders whose job is
+                        to get the order from clients and call the trading system and make transactions every certain
+                        time period. However, on our <b>Trade4U</b> website, instead of calling the trader to sell or
+                        buy stocks, clients can easily do this themselves.
+                    </p>
+                    <br>
+                    <br>
+                    <p align="justify">
+                        To make a transaction, clients just need to input 2 parameters. One is the amount of shares they
+                        want to sell and another is the initial price of the share. The system will split the order
+                        evenly and call the simulator API to complete the job. And our <b>Trade4U</b> system will keep
+                        every record of every single success/failure status of each selling operations. So that when the
+                        market closes every day, clients can get a virtual result of how many shares have been
+                        successfully sold.
+                    </p>
+                    <div align="right">
+                        <img src="../static/chase.png" height="40" width="40"> &nbsp <img src="../static/col.png"
+                                                                                          height="40" width="40">
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="team">
+                    <table class="table" rules="none">
+                        <td>
+                            <h3 style="font-size: 200%">Team Name</h3>
+                            <p>&nbsp&nbsp&nbsp&nbspATeamHasNoName</p>
+                            <h3 style="font-size: 200%">Mentor</h3>
+                            <p>&nbsp&nbsp&nbsp&nbspBrian Cortese</p>
+                            <h3 style="font-size: 200%">Leader</h3>
+                            <p>&nbsp&nbsp&nbsp&nbspXucan Wang</p>
+                            <h3 style="font-size: 200%">Members</h3>
+                            <p>&nbsp&nbsp&nbsp&nbspShuo Chang</p>
+                            <p>&nbsp&nbsp&nbsp&nbspYimeng Zhou</p>
+                            <p>&nbsp&nbsp&nbsp&nbspQianwen Zheng</p>
+                        </td>
+                        <td align="center" valign="middle">
+                            <br><br><br>
+                            <img src="../static/jpmorgan_logo1.gif">
+                            <br><br>
+                            <p></p>
+                            <img src="../static/columbia_logo.png">
+                        </td>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 </div>
 
 {% endblock %}
+
+

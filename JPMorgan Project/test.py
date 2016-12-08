@@ -1,11 +1,13 @@
 import unittest
+
 import DummyAPI
+
 
 class MyTest(unittest.TestCase):
     # create an app
     def setUp(self):
         self.app = DummyAPI.app.test_client()
-        self.app.usernameAndPassword = {'TestUserName':'TestPassword'}
+        self.app.usernameAndPassword = {'TestUserName': 'TestPassword'}
 
     def test_show_homepage(self):
         response = self.app.get("/")
@@ -13,9 +15,9 @@ class MyTest(unittest.TestCase):
 
     def login(self, username, password):
         return self.app.post('/login', data=dict(
-        username = username,
-        password = password
-    ))
+            username=username,
+            password=password
+        ))
 
     def test_log_in_username_not_exist(self):
         username = 'WrongUserName'

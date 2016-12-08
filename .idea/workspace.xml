@@ -2,11 +2,86 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21b26c54-1859-4e17-ad85-8a2ef0dbcd36" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JPMorgan Project/test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JPMorgan Project/DummyAPI.py" afterPath="$PROJECT_DIR$/JPMorgan Project/DummyAPI.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JPMorgan Project/Templates/header_login.html" afterPath="$PROJECT_DIR$/JPMorgan Project/Templates/header_login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JPMorgan Project/Templates/homepage.html" afterPath="$PROJECT_DIR$/JPMorgan Project/Templates/homepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JPMorgan Project/Templates/login.html" afterPath="$PROJECT_DIR$/JPMorgan Project/Templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JPMorgan Project/server.py" afterPath="$PROJECT_DIR$/JPMorgan Project/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JPMorgan Project/test.py" afterPath="$PROJECT_DIR$/JPMorgan Project/test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/Annotator-index.html" afterPath="$PROJECT_DIR$/code Inspection/Annotator-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/Annotator/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/Annotator/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/Annotator/e1.html" afterPath="$PROJECT_DIR$/code Inspection/Annotator/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/Annotator/e2.html" afterPath="$PROJECT_DIR$/code Inspection/Annotator/e2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/Annotator/index.html" afterPath="$PROJECT_DIR$/code Inspection/Annotator/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/HtmlUnknownAttribute-index.html" afterPath="$PROJECT_DIR$/code Inspection/HtmlUnknownAttribute-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/HtmlUnknownAttribute/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/HtmlUnknownAttribute/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/HtmlUnknownAttribute/e1.html" afterPath="$PROJECT_DIR$/code Inspection/HtmlUnknownAttribute/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/HtmlUnknownAttribute/e2.html" afterPath="$PROJECT_DIR$/code Inspection/HtmlUnknownAttribute/e2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/HtmlUnknownAttribute/index.html" afterPath="$PROJECT_DIR$/code Inspection/HtmlUnknownAttribute/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag-index.html" afterPath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag/e1.html" afterPath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag/e2.html" afterPath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag/e2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag/e3.html" afterPath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag/e3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag/index.html" afterPath="$PROJECT_DIR$/code Inspection/HtmlUnknownTag/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyBroadExceptionInspection-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyBroadExceptionInspection-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyBroadExceptionInspection/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyBroadExceptionInspection/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyBroadExceptionInspection/e1.html" afterPath="$PROJECT_DIR$/code Inspection/PyBroadExceptionInspection/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyBroadExceptionInspection/index.html" afterPath="$PROJECT_DIR$/code Inspection/PyBroadExceptionInspection/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyComparisonWithNoneInspection-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyComparisonWithNoneInspection-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyComparisonWithNoneInspection/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyComparisonWithNoneInspection/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyComparisonWithNoneInspection/e1.html" afterPath="$PROJECT_DIR$/code Inspection/PyComparisonWithNoneInspection/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyComparisonWithNoneInspection/index.html" afterPath="$PROJECT_DIR$/code Inspection/PyComparisonWithNoneInspection/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyIncorrectDocstringInspection-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyIncorrectDocstringInspection-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyIncorrectDocstringInspection/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyIncorrectDocstringInspection/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyIncorrectDocstringInspection/e1.html" afterPath="$PROJECT_DIR$/code Inspection/PyIncorrectDocstringInspection/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyIncorrectDocstringInspection/index.html" afterPath="$PROJECT_DIR$/code Inspection/PyIncorrectDocstringInspection/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyPep8Inspection-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyPep8Inspection-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyPep8Inspection/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyPep8Inspection/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyPep8Inspection/e1.html" afterPath="$PROJECT_DIR$/code Inspection/PyPep8Inspection/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyPep8Inspection/e2.html" afterPath="$PROJECT_DIR$/code Inspection/PyPep8Inspection/e2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyPep8Inspection/index.html" afterPath="$PROJECT_DIR$/code Inspection/PyPep8Inspection/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyPep8NamingInspection-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyPep8NamingInspection-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyPep8NamingInspection/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyPep8NamingInspection/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyPep8NamingInspection/e1.html" afterPath="$PROJECT_DIR$/code Inspection/PyPep8NamingInspection/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyPep8NamingInspection/e2.html" afterPath="$PROJECT_DIR$/code Inspection/PyPep8NamingInspection/e2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyPep8NamingInspection/index.html" afterPath="$PROJECT_DIR$/code Inspection/PyPep8NamingInspection/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyShadowingBuiltinsInspection-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyShadowingBuiltinsInspection-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyShadowingBuiltinsInspection/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyShadowingBuiltinsInspection/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyShadowingBuiltinsInspection/e1.html" afterPath="$PROJECT_DIR$/code Inspection/PyShadowingBuiltinsInspection/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyShadowingBuiltinsInspection/index.html" afterPath="$PROJECT_DIR$/code Inspection/PyShadowingBuiltinsInspection/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyShadowingNamesInspection-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyShadowingNamesInspection-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyShadowingNamesInspection/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyShadowingNamesInspection/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyShadowingNamesInspection/e1.html" afterPath="$PROJECT_DIR$/code Inspection/PyShadowingNamesInspection/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyShadowingNamesInspection/e2.html" afterPath="$PROJECT_DIR$/code Inspection/PyShadowingNamesInspection/e2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyShadowingNamesInspection/index.html" afterPath="$PROJECT_DIR$/code Inspection/PyShadowingNamesInspection/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyUnresolvedReferencesInspection-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyUnresolvedReferencesInspection-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyUnresolvedReferencesInspection/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyUnresolvedReferencesInspection/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyUnresolvedReferencesInspection/e1.html" afterPath="$PROJECT_DIR$/code Inspection/PyUnresolvedReferencesInspection/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyUnresolvedReferencesInspection/e2.html" afterPath="$PROJECT_DIR$/code Inspection/PyUnresolvedReferencesInspection/e2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyUnresolvedReferencesInspection/index.html" afterPath="$PROJECT_DIR$/code Inspection/PyUnresolvedReferencesInspection/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyUnusedLocalInspection-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyUnusedLocalInspection-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyUnusedLocalInspection/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/PyUnusedLocalInspection/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyUnusedLocalInspection/e1.html" afterPath="$PROJECT_DIR$/code Inspection/PyUnusedLocalInspection/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/PyUnusedLocalInspection/index.html" afterPath="$PROJECT_DIR$/code Inspection/PyUnusedLocalInspection/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection-index.html" afterPath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e1.html" afterPath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e2.html" afterPath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e3.html" afterPath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e4.html" afterPath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e5.html" afterPath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e6.html" afterPath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e7.html" afterPath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/e7.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/index.html" afterPath="$PROJECT_DIR$/code Inspection/SpellCheckingInspection/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/XmlInvalidId-index.html" afterPath="$PROJECT_DIR$/code Inspection/XmlInvalidId-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/XmlInvalidId/default package-index.html" afterPath="$PROJECT_DIR$/code Inspection/XmlInvalidId/default package-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/XmlInvalidId/e1.html" afterPath="$PROJECT_DIR$/code Inspection/XmlInvalidId/e1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/XmlInvalidId/index.html" afterPath="$PROJECT_DIR$/code Inspection/XmlInvalidId/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/empty.html" afterPath="$PROJECT_DIR$/code Inspection/empty.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code Inspection/index.html" afterPath="$PROJECT_DIR$/code Inspection/index.html" />
     </list>
     <ignored path="JPMorgan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,25 +104,33 @@
       <file leaf-file-name="DummyAPI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JPMorgan Project/DummyAPI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#72#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1729">
-              <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+            <state relative-caret-position="2176">
+              <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/homepage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,8 +151,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/JPMorgan Project/test.py" />
-        <option value="$PROJECT_DIR$/JPMorgan Project/DummyAPI.py" />
         <option value="$PROJECT_DIR$/JPMorgan Project/Templates/login.html" />
+        <option value="$PROJECT_DIR$/JPMorgan Project/DummyAPI.py" />
+        <option value="$PROJECT_DIR$/JPMorgan Project/Templates/homepage.html" />
       </list>
     </option>
   </component>
@@ -104,7 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -137,8 +220,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JPMorgan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JPMorgan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JPMorgan Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,8 +461,8 @@
     <recent_temporary>
       <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.DummyAPI" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.server" />
+        <item index="1" class="java.lang.String" itemvalue="Python.server" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test" />
       </list>
     </recent_temporary>
   </component>
@@ -386,9 +488,10 @@
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960753" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -396,7 +499,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -419,11 +521,77 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/DummyAPI.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JPMorgan Project/DummyAPI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JPMorgan Project/DummyAPI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JPMorgan Project/DummyAPI.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -443,9 +611,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -465,9 +631,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2057">
           <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -487,7 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -495,29 +658,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/DummyAPI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1729">
-          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        <state relative-caret-position="2176">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JPMorgan Project/Templates/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
