@@ -34,8 +34,8 @@
                                placeholder="Enter price">
                     </div>
                     <div class="form-group">
-                        <button type="button" id="submitBtn" class="btn btn-primary">Sell</button>
-                        <button type="button" class="btn btn-primary disabled">Buy</button>
+                        <button type="button" id="submitBtn" class="btn btn-primary">Fast</button>
+                        <button type="button" id="submitBtn2" class="btn btn-primary">TWAP</button>
                     </div>
                 </form>
             </div>
@@ -64,7 +64,6 @@
 
 
 
-
             </script>
 
             <script type="text/javascript"
@@ -82,7 +81,6 @@
 
 
 
-
             </script>
 
             <script type="text/javascript">
@@ -91,8 +89,10 @@
     	           socket.emit('form',formData);
     	         });
 
-
-
+            $('#submitBtn2').button().click(function(event) {
+                     var formData2 = {quantity: $('#quantity').val(), price: $('#price').val()};
+    	           socket.emit('form2',formData2);
+    	         });
 
             </script>
 
@@ -130,7 +130,6 @@ $(document).ready(function() {
 
 
 
-
             </script>
 
             <div style="margin-top: 15px; margin-left: 20px">
@@ -145,11 +144,13 @@ $(document).ready(function() {
             <table id="table" class="table table-hover">
                 <thead>
                 <tr>
+                    <td><b>ID</b></td>
                     <td><b>TimeStamp</b></td>
                     <td><b>Qty</b></td>
                     <td><b>Avg_Price</b></td>
                     <td><b>Notional</b></td>
                     <td><b>Status</b></td>
+                    <td><b>Description</b></td>
                 </tr>
                 </thead>
 
@@ -172,6 +173,8 @@ $(document).ready(function() {
                             tr.append("<td>" + data[i][2] + "</td>");
                             tr.append("<td>" + data[i][3] + "</td>");
                             tr.append("<td>" + data[i][4] + "</td>");
+                            tr.append("<td>" + data[i][5] + "</td>");
+                            tr.append("<td>" + data[i][6] + "</td>");
                             tr.append("</tr>")
                             $('#table').append(tr);
                             }
@@ -179,7 +182,6 @@ $(document).ready(function() {
 				return false;
 				},10000);
 		     });
-
 
 
 
@@ -194,3 +196,4 @@ $(document).ready(function() {
 
 </div>
 {% endblock %}
+
